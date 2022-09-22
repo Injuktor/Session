@@ -59,6 +59,10 @@
             this.surnameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guidBox = new System.Windows.Forms.TextBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.licencesGrid = new System.Windows.Forms.DataGridView();
+            this.Indicator = new System.Windows.Forms.DataGridViewImageColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.licencesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pathImageLabel
@@ -71,12 +75,13 @@
             // 
             // saveDriverButton
             // 
-            this.saveDriverButton.Location = new System.Drawing.Point(650, 10);
+            this.saveDriverButton.Location = new System.Drawing.Point(787, 10);
             this.saveDriverButton.Name = "saveDriverButton";
             this.saveDriverButton.Size = new System.Drawing.Size(139, 44);
             this.saveDriverButton.TabIndex = 63;
             this.saveDriverButton.Text = "Сохранить данные";
             this.saveDriverButton.UseVisualStyleBackColor = true;
+            this.saveDriverButton.Click += new System.EventHandler(this.saveDriverButton_Click);
             // 
             // label13
             // 
@@ -102,6 +107,7 @@
             this.selectImageButton.TabIndex = 60;
             this.selectImageButton.Text = "Выбрать файл";
             this.selectImageButton.UseVisualStyleBackColor = true;
+            this.selectImageButton.Click += new System.EventHandler(this.selectImageButton_Click);
             // 
             // addrLifeCityCB
             // 
@@ -312,14 +318,46 @@
             // 
             this.guidBox.Location = new System.Drawing.Point(13, 34);
             this.guidBox.Name = "guidBox";
+            this.guidBox.ReadOnly = true;
             this.guidBox.Size = new System.Drawing.Size(100, 20);
             this.guidBox.TabIndex = 34;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(787, 573);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(139, 35);
+            this.deleteButton.TabIndex = 65;
+            this.deleteButton.Text = "Удалить водителя";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // licencesGrid
+            // 
+            this.licencesGrid.AllowUserToAddRows = false;
+            this.licencesGrid.AllowUserToDeleteRows = false;
+            this.licencesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.licencesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Indicator});
+            this.licencesGrid.Location = new System.Drawing.Point(348, 68);
+            this.licencesGrid.Name = "licencesGrid";
+            this.licencesGrid.ReadOnly = true;
+            this.licencesGrid.Size = new System.Drawing.Size(578, 454);
+            this.licencesGrid.TabIndex = 66;
+            // 
+            // Indicator
+            // 
+            this.Indicator.HeaderText = "Indicator";
+            this.Indicator.Name = "Indicator";
+            this.Indicator.ReadOnly = true;
             // 
             // DriverCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 622);
+            this.ClientSize = new System.Drawing.Size(938, 622);
+            this.Controls.Add(this.licencesGrid);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.pathImageLabel);
             this.Controls.Add(this.saveDriverButton);
             this.Controls.Add(this.label13);
@@ -353,6 +391,7 @@
             this.Controls.Add(this.guidBox);
             this.Name = "DriverCardForm";
             this.Text = "Карточка водителя";
+            ((System.ComponentModel.ISupportInitialize)(this.licencesGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +430,8 @@
         private System.Windows.Forms.TextBox surnameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox guidBox;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.DataGridView licencesGrid;
+        private System.Windows.Forms.DataGridViewImageColumn Indicator;
     }
 }

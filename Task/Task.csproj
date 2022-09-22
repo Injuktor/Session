@@ -95,6 +95,12 @@
     <Compile Include="AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeStatusForm.Designer.cs">
+      <DependentUpon>ChangeStatusForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="DriverAddForm.cs">
       <SubType>Form</SubType>
@@ -108,6 +114,24 @@
     <Compile Include="DriverCardForm.Designer.cs">
       <DependentUpon>DriverCardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriverLicenceAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverLicenceAddForm.Designer.cs">
+      <DependentUpon>DriverLicenceAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicenceCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenceCardForm.Designer.cs">
+      <DependentUpon>LicenceCardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicencesForm.Designer.cs">
+      <DependentUpon>LicencesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DriversForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +143,23 @@
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeStatusForm.resx">
+      <DependentUpon>ChangeStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DriverAddForm.resx">
       <DependentUpon>DriverAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriverCardForm.resx">
       <DependentUpon>DriverCardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverLicenceAddForm.resx">
+      <DependentUpon>DriverLicenceAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenceCardForm.resx">
+      <DependentUpon>LicenceCardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicencesForm.resx">
+      <DependentUpon>LicencesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriversForm.resx">
       <DependentUpon>DriversForm.cs</DependentUpon>
@@ -136,6 +172,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -150,6 +187,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray_status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_status.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

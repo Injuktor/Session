@@ -25,6 +25,10 @@ namespace Task
         private static DriversForm _driversForm;
         private static DriverAddForm _driverAddForm;
         private static DriverCardForm _driverCardForm;
+        private static LicencesForm _licencesForm;
+        private static DriverLicenceAddForm _driverAddLicence;
+        private static LicenceCardForm _licenceCardForm;
+        private static ChangeStatusForm _changeStatusForm;
 
         public AuthForm()
         {
@@ -130,6 +134,18 @@ namespace Task
                 if (AuthForm.DriverCard != null && !AuthForm.DriverCard.IsDisposed)
                     AuthForm.DriverCard.Close();
 
+                if (AuthForm.Licences != null && !AuthForm.Licences.IsDisposed)
+                    AuthForm.Licences.Close();
+
+                if (AuthForm.DriverLicenceAdd != null && !AuthForm.DriverLicenceAdd.IsDisposed)
+                    AuthForm.DriverLicenceAdd.Close();
+
+                if (AuthForm.LicenceCard != null && !AuthForm.LicenceCard.IsDisposed)
+                    AuthForm.LicenceCard.Close();
+
+                if (AuthForm.ChangeStatus != null && !AuthForm.ChangeStatus.IsDisposed)
+                    AuthForm.ChangeStatus.Close();
+
                 if (AuthForm.Auth == null || AuthForm.Auth.IsDisposed)
                     AuthForm.Auth = new AuthForm();
 
@@ -139,7 +155,7 @@ namespace Task
             else
             {
                 //Если время не вышло, обновить таймер
-                AuthForm.TimeAfk = (DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L) + 10;
+                AuthForm.TimeAfk = (DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000L) + 60;
             }
         }
 
@@ -166,6 +182,30 @@ namespace Task
         {
             get { return _driverCardForm; }
             set { _driverCardForm = value; }
+        }
+
+        public static LicencesForm Licences
+        {
+            get { return _licencesForm; }
+            set { _licencesForm = value; }
+        }
+
+        public static DriverLicenceAddForm DriverLicenceAdd
+        {
+            get { return _driverAddLicence; }
+            set { _driverAddLicence = value; }
+        }
+
+        public static LicenceCardForm LicenceCard
+        {
+            get { return _licenceCardForm; }
+            set { _licenceCardForm = value; }
+        }
+
+        public static ChangeStatusForm ChangeStatus
+        {
+            get { return _changeStatusForm; }
+            set { _changeStatusForm = value; }
         }
 
         public static long TimeAfk

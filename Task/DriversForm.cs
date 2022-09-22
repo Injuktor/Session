@@ -53,7 +53,15 @@ namespace Task
 
                 AuthForm.DriverCard.Show();
             }
-            catch { throw; }
+            catch { return; }
+        }
+
+        private void licencesButton_Click(object sender, EventArgs e)
+        {
+            if (AuthForm.Licences == null || AuthForm.Licences.IsDisposed)
+                AuthForm.Licences = new LicencesForm();
+
+            AuthForm.Licences.Show();
         }
     }
 }
